@@ -14,7 +14,7 @@
      set nocompatible               " be iMproved
      filetype off                   " required!
 
-     set rtp+=~/bin/vim-test/vim/bundle/vundle/
+     set rtp+=~/.vim/bundle/vundle/
      call vundle#rc()
 
      " let Vundle manage Vundle
@@ -36,7 +36,6 @@
      Bundle 'scrooloose/syntastic'
      Bundle 'majutsushi/tagbar'
      Bundle 'nathanaelkane/vim-indent-guides'
-     Bundle 'nixternal/taskwarrior-vim'
      Bundle 'vim-scripts/TaskList.vim'
      Bundle 'Lokaltog/powerline'
      Bundle 'jamessan/vim-gnupg'
