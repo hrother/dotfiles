@@ -137,19 +137,13 @@
   " Colorschemes {{{
     " use different colorschemes in gui and console
     if has('gui_running')
-      "colorscheme railscasts
       colorscheme distinguished
-      "colorscheme xoria256
-      "colorscheme torte
-      "set guifont=DejaVu\ Sans\ Mono\ 10
       set guifont=Inconsolata\ 14
-      "set guifont=Monaco\ 10
       set vb t_vb=
     else
       if $COLORTERM=='gnome-terminal'
         set term=gnome-256color
-       colorscheme railscasts
-       "colorscheme distinguished
+       colorscheme distinguished
       else
         colorscheme torte
       endif
