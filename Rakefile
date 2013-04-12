@@ -5,14 +5,14 @@ task :install do
   install_oh_my_zsh
   switch_to_zsh
   replace_all = false
-  files = DIR['*'] - %w[Rakefile README.rdoc oh-my-zsh]
+
+  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/hrother.zsh-theme"
-  files << "oh-my-zsh/custom/plugins/com_abriv"
-  files << "oh-my-zsh/custom/plugins/dir_abriv"
-  files << "oh-my-zsh/custom/plugins/functions"
-  files << "oh-my-zsh/custom/plugins/env"
+  files << "oh-my-zsh/custom/plugins/com_abriv/com_abriv.plugin.zsh"
+  files << "oh-my-zsh/custom/plugins/dir_abriv/dir_abriv.plugin.zsh"
+  files << "oh-my-zsh/custom/plugins/functions/functions.plugin.zsh"
+  files << "oh-my-zsh/custom/plugins/env/env.plugin.zsh"
   files.each do |file|
-    next if %w[Rakefile README.rdoc oh-my-zsh].include? file
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
         replace_file(file)
@@ -38,8 +38,10 @@ task :install do
   # Need to do this to make vim use RVM's ruby version
   #puts "Moving zshenv to zshrc"
   #system %Q{sudo mv /etc/zshenv /etc/zshrc}
+  if not File.exists?(File.expand_path("~/.tmp"))
+    system %Q{mkdir $HOME/.tmp} 
+  end
 
-  system %Q{mkdir ~/.tmp}
 end
 
 def replace_file(file)
@@ -48,6 +50,13 @@ def replace_file(file)
 end
 
 def link_file(file)
+  if file =~ /custom/
+    path = File.dirname(file)
+    if not File.directory?(File.expand_path("~/.#{path}"))
+      puts "creating folder #{path}"
+      system %Q{mkdir -p "$HOME/.#{path}"}
+    end
+  end
   puts "linking ~/.#{file}"
   system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
 end
