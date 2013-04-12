@@ -248,6 +248,7 @@
     map <leader>gc :Gcommit<CR>
     map <leader>gs :Gstatus<CR>
     map <leader>ga :Gadd<CR>
+    map <leader>gw :Gwrite<CR>
     " }}}
 
     " Open files in same directory as the current file {{{
