@@ -12,5 +12,8 @@ if [[ -z "$BROWSER" ]] ; then
     fi
 fi
 
+# Disable Terminal Flow Control
+stty -ixon
+
 export SHELL="/usr/bin/zsh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM functio
