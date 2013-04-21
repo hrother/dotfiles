@@ -173,6 +173,7 @@
   set viminfo='20,\"50
   "Prevent Vim from clobbering the scrollback buffer.
   set t_ti= t_te=
+  runtime macros/matchit.vim
 " }}}
 
   " Key Mappings {{{
