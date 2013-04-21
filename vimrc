@@ -219,6 +219,8 @@
     map <leader>nsp :e ~/Dropbox/notes/slingshot/project-notes.txt<cr>
     map <leader>nsc :e ~/Dropbox/notes/slingshot/coding-notes.txt<cr>
     map <leader>nst :e ~/Dropbox/notes/slingshot/thesis-notes.txt<cr>
+    map <leader>nm :e ~/Dropbox/notes/math-II.txt<cr>
+    map <leader>nmm :e ~/Dropbox/notes/math-III.txt<cr>
     " }}}
 
     " Command-t {{{
@@ -280,19 +282,6 @@
 
   " Functions {{{
 
-    " Fixme sign {{{
-      sign define fixme text=!! linehl=Todo texthl=Error icon=/usr/share/pixmaps/mini.debug.xpm
-
-      function! SignFixme()
-        execute ":sign place ".line(".")." line=".line(".")." name=fixme file=" . expand("%:p")
-      endfunction
-      map <leader>fm :call SignFixme()<CR>
-
-      function! NoSign()
-        execute ":sign unplace ".line(".").""
-      endfunction
-      map <leader>nf :call NoSign()<CR>
-    " }}}
   " }}}
 
   " Autocommands {{{
