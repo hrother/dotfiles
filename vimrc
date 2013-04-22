@@ -220,8 +220,8 @@
     map <leader>nsp :e ~/Dropbox/notes/slingshot/project-notes.txt<cr>
     map <leader>nsc :e ~/Dropbox/notes/slingshot/coding-notes.txt<cr>
     map <leader>nst :e ~/Dropbox/notes/slingshot/thesis-notes.txt<cr>
-    map <leader>nm :e ~/Dropbox/notes/math-II.txt<cr>
-    map <leader>nmm :e ~/Dropbox/notes/math-III.txt<cr>
+    map <leader>nm :e ~/Dropbox/notes/math-II.tex<cr>
+    map <leader>nmm :e ~/Dropbox/notes/math-III.tex<cr>
     " }}}
 
     " Command-t {{{
