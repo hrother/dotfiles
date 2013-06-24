@@ -15,5 +15,14 @@ fi
 # Disable Terminal Flow Control
 stty -ixon
 
+# setup python virtualenvwrapper
+if [ `id -u` != '0' ]; then
+  export VIRTUALENV_USE_DISTRIBUTE=1        # <-- Always use pip/distribute
+  export WORKON_HOME=$HOME/.virtualenvs       # <-- Where all virtualenvs will be stored
+  source /usr/local/bin/virtualenvwrapper.sh
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+  export PIP_RESPECT_VIRTUALENV=true
+fi
+
 export SHELL="/usr/bin/zsh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM functio
