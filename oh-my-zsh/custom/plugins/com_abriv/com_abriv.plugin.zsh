@@ -1,5 +1,12 @@
 # Aliases for commandos
 
+# tmux should allways assume a 256 color shell
+alias tmux='tmux -2'
+
+# invoke tdeamon
+alias td_all='tdaemon -t nose --custom-args="--with-notify --no-start-message --with-coverage --cover-package=trebuchet --with-freshen -v"'
+alias tdf='tdaemon -t nose --custom-args="--with-notify --no-start-message --with-freshen -v"'
+
 # for zsh config
 alias sz='source ~/.zshrc'
 alias ez='vi ~/.zshrc'
