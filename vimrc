@@ -29,6 +29,7 @@
      Bundle 'tpope/vim-repeat'
      Bundle 'tpope/vim-rails.git'
      Bundle 'tpope/vim-unimpaired.git'
+     Bundle 'tpope/vim-abolish'
      Bundle 'msanders/snipmate.vim'
      Bundle 'scrooloose/nerdcommenter'
      Bundle 'scrooloose/nerdtree'
@@ -43,12 +44,18 @@
      Bundle 'Lokaltog/vim-distinguished'
      Bundle 'nelstrom/vim-qargs'
      Bundle 'nelstrom/vim-visual-star-search'
+     Bundle 'kana/vim-textobj-user'
+     Bundle 'kana/vim-textobj-lastpat'
+     Bundle 'ervandew/supertab'
+     Bundle 'reinh/vim-makegreen'
+     Bundle 'lambdalisue/nose.vim'
      "" vim-scripts repos
      Bundle 'L9'
      "" non github repos
      Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
      Bundle 'git://git.wincent.com/command-t.git'
-     "" ...
+     " Not working plugin
+     "Bundle 'Valloric/YouCompleteMe'
 
      filetype plugin indent on     " required! 
      "
@@ -142,8 +149,10 @@
       set vb t_vb=
     else
       if $COLORTERM=='gnome-terminal'
-        set term=gnome-256color
+        set term=screen-256color
        colorscheme distinguished
+       set t_ut=
+       set t_Co=256
       else
         colorscheme torte
       endif
@@ -162,7 +171,8 @@
   set writebackup
   set backupdir=~/.tmp
   set directory=~/.tmp
-  set tags=./tags
+  set notagrelative
+  set tags=~/.tmp/tags;
   set gdefault
   set nostartofline
   set backspace=2
@@ -207,7 +217,7 @@
     " }}}
 
     " Create/refresh Tags {{{
-      map <leader>ct :!ctags -R .<CR>
+      map <leader>ct :GenerateTags<CR>
     "}}}
 
     "Searching {{{
@@ -279,6 +289,10 @@
     " Formating {{{
       command! DeleteTrailingWs :%s/\s\+$//
     " }}}
+
+    " Tags {{{
+        command! GenerateTags call system('ctags -R -f ~/.tmp/tags --python-kinds=-i --exclude=.git .') | echo
+    "}}}
   " }}}
 
   " Functions {{{
@@ -319,11 +333,13 @@
     " python {{{
       autocmd BufNewFile,BufRead *.py set nocindent shiftwidth=4 tabstop=4 softtabstop=4 expandtab tw=79
       autocmd FileType python map <F4> :w<CR>:!python "%"<CR>
-      autocmd FileType map <buffer> K :let save_isk = &iskeyword \|
+      autocmd FileType python map <buffer> K :let save_isk = &iskeyword \|
           \ set iskeyword+=. \|
           \ execute "!pydoc " . expand("<cword>") \|
           \ let &iskeyword = save_isk<CR>
       autocmd FileType python set omnifunc=pythoncomplete#Complete
+      autocmd BufNewFile,BufRead *.py compiler nose
+      autocmd FileType python nnoremap ,t :MakeGreen test_%<CR>
     " }}}
 
     " dot {{{
@@ -335,17 +351,21 @@
     " }}}
 
     " latex {{{
-      "autocmd BufNewFile,bufRead *.tex 
+      autocmd BufNewFile,bufRead *.tex setlocal nofoldenable
     " }}}
 
   " }}}
 
   " Plugin config {{{
 
+  " MakeGreen {{{
+      let g:makegreen_stay_on_file=1
+  " }}}
+
     " Command-t {{{
       let g:CommandTMaxHeight=10
       let g:CommandTMinHeight=4
-      set wildignore+=*.o,*.out,*.so,*.png,*.PNG,*.jpg,*.JPG,*.GIF,*.gif,tmp/**,
+      "set wildignore+=*.o,*.out,*.so,*.png,*.PNG,*.jpg,*.JPG,*.GIF,*.gif,tmp/**,
 
     " }}}
 
@@ -358,16 +378,17 @@
     " }}}
 
     " Snipmate {{{
-      let g:snippets_dir = '~/.vim/bundle/snipmate-snippets'
+      "let g:snippets_dir = '~/.vim/bundle/snipmate-snippets'
       let g:snips_author = 'Holger Rother'
     " }}}
 
     " Syntastic {{{
       let g:syntastic_check_on_open=1
-      let g:syntastic_auto_loc_list=1
+      let g:syntastic_auto_loc_list=0
       let g:syntastic_loc_list_height=5
       let g:syntastic_error_symbol='✗'
       let g:syntastic_warning_symbol='⚠'
+      let g:syntastic_python_checkers=['pylint']
     " }}}
 
     " Undotree {{{
