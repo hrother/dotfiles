@@ -49,6 +49,7 @@
      Bundle 'ervandew/supertab'
      Bundle 'reinh/vim-makegreen'
      Bundle 'lambdalisue/nose.vim'
+     Bundle 'christoomey/vim-tmux-navigator'
      "" vim-scripts repos
      Bundle 'L9'
      "" non github repos
@@ -149,10 +150,10 @@
       set vb t_vb=
     else
       if $COLORTERM=='gnome-terminal'
-        set term=screen-256color
-       colorscheme distinguished
-       set t_ut=
-       set t_Co=256
+        set term=gnome-256color
+        colorscheme distinguished
+        set t_ut=
+        set t_Co=256
       else
         colorscheme torte
       endif
@@ -400,6 +401,8 @@
 
     " Powerline {{{
        set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+       " only powerline shows mode
+       set noshowmode
     "}}}
 
   " }}}
