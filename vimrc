@@ -221,6 +221,7 @@
       map <leader>ct :GenerateTags<CR>
     "}}}
 
+
     "Searching {{{
       :nnoremap <CR> :nohlsearch<cr>
     "}}}
@@ -297,7 +298,6 @@
   " }}}
 
   " Functions {{{
-
   " }}}
 
   " Autocommands {{{
@@ -340,7 +340,7 @@
           \ let &iskeyword = save_isk<CR>
       autocmd FileType python set omnifunc=pythoncomplete#Complete
       autocmd BufNewFile,BufRead *.py compiler nose
-      autocmd FileType python nnoremap ,t :MakeGreen test_%<CR>
+      autocmd FileType python nnoremap <leader>T :MakeGreen .<CR>
     " }}}
 
     " dot {{{
@@ -381,6 +381,13 @@
     " Snipmate {{{
       "let g:snippets_dir = '~/.vim/bundle/snipmate-snippets'
       let g:snips_author = 'Holger Rother'
+    " }}}
+
+    " vim-tmux {{{ 
+      " latex-suites imap.vim plugin binds <c-j> in normalmode
+      " if a maping for IMAP_JumpForward exists this mapping is not created
+      " So map it to something
+      nmap <C-`> <Plug>IMAP_JumpForward
     " }}}
 
     " Syntastic {{{
