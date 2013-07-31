@@ -42,14 +42,17 @@
      Bundle 'jamessan/vim-gnupg'
      Bundle 'mbbill/undotree'
      Bundle 'Lokaltog/vim-distinguished'
+     Bundle 'sjl/badwolf'
      Bundle 'nelstrom/vim-qargs'
      Bundle 'nelstrom/vim-visual-star-search'
      Bundle 'kana/vim-textobj-user'
      Bundle 'kana/vim-textobj-lastpat'
-     Bundle 'ervandew/supertab'
+     "Bundle 'ervandew/supertab'
      Bundle 'reinh/vim-makegreen'
      Bundle 'lambdalisue/nose.vim'
      Bundle 'christoomey/vim-tmux-navigator'
+     Bundle 'airblade/vim-gitgutter'
+     "Bundle 'Yggdroot/indentLine'
      "" vim-scripts repos
      Bundle 'L9'
      "" non github repos
@@ -145,13 +148,15 @@
   " Colorschemes {{{
     " use different colorschemes in gui and console
     if has('gui_running')
-      colorscheme distinguished
+      "colorscheme distinguished
+      colorscheme badwolf
       set guifont=Inconsolata\ 14
       set vb t_vb=
     else
       if $COLORTERM=='gnome-terminal'
         set term=gnome-256color
-        colorscheme distinguished
+        "colorscheme distinguished
+        colorscheme badwolf
         set t_ut=
         set t_Co=256
       else
@@ -262,7 +267,6 @@
     " Fugitive {{{
     map <leader>gc :Gcommit<CR>
     map <leader>gs :Gstatus<CR>
-    map <leader>ga :Gadd<CR>
     map <leader>gw :Gwrite<CR>
     " }}}
 
