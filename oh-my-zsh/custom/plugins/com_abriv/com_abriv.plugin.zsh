@@ -14,6 +14,7 @@ alias eca='vi ~/.oh-my-zsh/custom/com_abriv.zsh'
 alias eda='vi ~/.oh-my-zsh/custom/dir_abirv.zsh'
 
 alias j='jobs -l'
+alias c='clear'
 
 # listing stuff (fun with ls)
 alias dir="ls -lSrah"
