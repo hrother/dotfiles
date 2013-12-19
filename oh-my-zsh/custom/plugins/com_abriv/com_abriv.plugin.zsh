@@ -10,8 +10,8 @@ alias tdf='tdaemon -t nose --custom-args="--with-notify --no-start-message --wit
 # for zsh config
 alias sz='source ~/.zshrc'
 alias ez='vi ~/.zshrc'
-alias eca='vi ~/.oh-my-zsh/custom/com_abriv.zsh'
-alias eda='vi ~/.oh-my-zsh/custom/dir_abirv.zsh'
+alias eca='vi $HOME/.dotfiles/oh-my-zsh/custom/plugins/com_abriv/com_abriv.plugin.zsh'
+alias eda='vi $HOME/.dotfiles/oh-my-zsh/custom/plugins/dir_abriv/dir_abriv.plugin.zsh'
 
 alias j='jobs -l'
 alias c='clear'
