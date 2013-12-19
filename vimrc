@@ -52,6 +52,9 @@
      Bundle 'lambdalisue/nose.vim'
      Bundle 'christoomey/vim-tmux-navigator'
      Bundle 'airblade/vim-gitgutter'
+     Bundle 'altercation/vim-colors-solarized'
+     Bundle 'sk1418/HowMuch'
+     Bundle 'sk1418/Join'
      "Bundle 'Yggdroot/indentLine'
      "" vim-scripts repos
      Bundle 'L9'
@@ -185,7 +188,7 @@
   set ww=<,>,h,l
   set cpoptions=ces$
   setlocal spell spelllang=en_us
-  set nospell
+  set spell
   set viminfo='20,\"50
   "Prevent Vim from clobbering the scrollback buffer.
   set t_ti= t_te=
@@ -418,4 +421,5 @@
 
   " }}}
 
+  syntax spell toplevel
   " vim: set foldmethod=marker:
