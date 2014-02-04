@@ -58,6 +58,7 @@
      "Bundle 'Yggdroot/indentLine'
      "" vim-scripts repos
      Bundle 'L9'
+     Bundle 'wakatime/vim-wakatime'
      "" non github repos
      Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
      Bundle 'git://git.wincent.com/command-t.git'
