@@ -12,6 +12,8 @@ task :install do
   files << "oh-my-zsh/custom/plugins/dir_abriv/dir_abriv.plugin.zsh"
   files << "oh-my-zsh/custom/plugins/functions/functions.plugin.zsh"
   files << "oh-my-zsh/custom/plugins/env/env.plugin.zsh"
+  files << "oh-my-zsh/custom/plugins/virsh/virsh.plugin.zsh"
+  files << "oh-my-zsh/custom/plugins/virsh/_virsh"
   files.each do |file|
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
