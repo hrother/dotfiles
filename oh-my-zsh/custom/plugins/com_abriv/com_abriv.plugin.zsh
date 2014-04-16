@@ -7,6 +7,9 @@ alias tmux='tmux -2'
 alias td_all='tdaemon -t nose --custom-args="--with-notify --no-start-message --with-coverage --cover-package=trebuchet --with-freshen -v"'
 alias tdf='tdaemon -t nose --custom-args="--with-notify --no-start-message --with-freshen -v"'
 
+# show random man page
+alias til='man $(ls /bin /usr/bin |shuf -n 1)'
+
 # for zsh config
 alias sz='source ~/.zshrc'
 alias ez='vi ~/.zshrc'
