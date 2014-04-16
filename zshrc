@@ -6,7 +6,7 @@ ZSH_THEME="hrother"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow debian rails history vundle functions com_abriv dir_abriv env)
+plugins=(git git-flow debian rails history vundle functions com_abriv dir_abriv env virsh)
 
 source $ZSH/oh-my-zsh.sh
 
