@@ -47,23 +47,23 @@
      Bundle 'nelstrom/vim-visual-star-search'
      Bundle 'kana/vim-textobj-user'
      Bundle 'kana/vim-textobj-lastpat'
-     "Bundle 'ervandew/supertab'
      Bundle 'reinh/vim-makegreen'
-     Bundle 'lambdalisue/nose.vim'
      Bundle 'christoomey/vim-tmux-navigator'
      Bundle 'airblade/vim-gitgutter'
      Bundle 'altercation/vim-colors-solarized'
      Bundle 'sk1418/HowMuch'
      Bundle 'sk1418/Join'
-     "Bundle 'Yggdroot/indentLine'
+     Bundle 'kien/ctrlp.vim'
+     " python
+     Bundle 'lambdalisue/nose.vim'
+     "Bundle 'klen/python-mode'
+     Bundle 'klen/rope-vim'
      "" vim-scripts repos
      Bundle 'L9'
      Bundle 'wakatime/vim-wakatime'
      "" non github repos
      Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-     Bundle 'git://git.wincent.com/command-t.git'
-     " Not working plugin
-     "Bundle 'Valloric/YouCompleteMe'
+     "Bundle 'git://git.wincent.com/command-t.git'
 
      filetype plugin indent on     " required! 
      "
@@ -246,8 +246,14 @@
     " }}}
 
     " Command-t {{{
-      map <leader><space> :CommandT<CR>
-      map <leader>r :CommandTFlush<CR>
+      "map <leader><space> :CommandT<CR>
+      "map <leader>r :CommandTFlush<CR>
+    " }}}
+
+    " ctrlp {{{
+      map <leader><space> :CtrlP<CR>
+      map <leader>r :CtrlPClearCache<CR>
+      "map <leader>b :CtrlPBuffer<CR>
     " }}}
 
     " NERDTree {{{
@@ -341,11 +347,6 @@
 
     " python {{{
       autocmd BufNewFile,BufRead *.py set nocindent shiftwidth=4 tabstop=4 softtabstop=4 expandtab tw=79
-      autocmd FileType python map <F4> :w<CR>:!python "%"<CR>
-      autocmd FileType python map <buffer> K :let save_isk = &iskeyword \|
-          \ set iskeyword+=. \|
-          \ execute "!pydoc " . expand("<cword>") \|
-          \ let &iskeyword = save_isk<CR>
       autocmd FileType python set omnifunc=pythoncomplete#Complete
       autocmd BufNewFile,BufRead *.py compiler nose
       autocmd FileType python nnoremap <leader>T :MakeGreen .<CR>
@@ -405,6 +406,18 @@
       let g:syntastic_error_symbol='✗'
       let g:syntastic_warning_symbol='⚠'
       let g:syntastic_python_checkers=['pylint']
+    " }}}
+
+    " python-mode {{{
+      "let g:pymode_lint_todo_symbol = 'WW'
+      "let g:pymode_lint_comment_symbol = 'CC'
+      "let g:pymode_lint_visual_symbol = 'RR'
+      "let g:pymode_lint_error_symbol = '✗'
+      "let g:pymode_lint_info_symbol = 'II'
+      "let g:pymode_lint_pyflakes_symbol = 'FF'
+      "let g:pymode_folding=0
+      "let g:pymode_lint=1
+      "let g:pymode_lint_on_fly=1
     " }}}
 
     " Undotree {{{
