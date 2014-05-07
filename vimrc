@@ -54,8 +54,12 @@
      Bundle 'sk1418/HowMuch'
      Bundle 'sk1418/Join'
      Bundle 'kien/ctrlp.vim'
+     Bundle 'benmills/vimux'
      " python
+     Bundle 'julienr/vimux-pyutils'
+     Bundle 'pitluga/vimux-nose-test'
      Bundle 'lambdalisue/nose.vim'
+     Bundle 'vim-scripts/py-coverage'
      "Bundle 'klen/python-mode'
      Bundle 'klen/rope-vim'
      "" vim-scripts repos
