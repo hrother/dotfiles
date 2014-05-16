@@ -6,13 +6,13 @@ function precmd {
 
     ###
     # Truncate the path if it's too long.
-    
+
     PR_FILLBAR=""
     PR_PWDLEN=""
-    
+
     local promptsize=${#${(%):---(%n@%m:%l)---()--}}
     local pwdsize=${#${(%):-%~}}
-    
+
     if [[ "$promptsize + $pwdsize" -gt $TERMWIDTH ]]; then
         ((PR_PWDLEN=$TERMWIDTH - $promptsize))
     else
@@ -38,9 +38,9 @@ $PR_WHITE)${(e)PR_SPACEBAR}$PR_GREY$PR_VBAR"
     # Get APM info.
 
     if which ibam > /dev/null; then
-	PR_APM_RESULT=`ibam --percentbattery`
+        PR_APM_RESULT=`ibam --percentbattery`
     elif which apm > /dev/null; then
-	PR_APM_RESULT=`apm`
+        PR_APM_RESULT=`apm`
     fi
 }
 
@@ -48,8 +48,8 @@ $PR_WHITE)${(e)PR_SPACEBAR}$PR_GREY$PR_VBAR"
 setopt extended_glob
 preexec () {
     if [[ "$TERM" == "screen" ]]; then
-	local CMD=${1[(wr)^(*=*|sudo|-*)]}
-	echo -n "\ek$CMD\e\\"
+        local CMD=${1[(wr)^(*=*|sudo|-*)]}
+        echo -n "\ek$CMD\e\\"
     fi
 }
 
@@ -86,44 +86,44 @@ setprompt () {
     PR_LLCORNER='┖'
     PR_LRCORNER='┛'
     PR_URCORNER='┓'
-    
+
     ###
     # Decide if we need to set titlebar text.
-    
+
     case $TERM in
-	xterm*)
-	    PR_TITLEBAR=$'%{\e]0;%(!.-=*[ROOT]*=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\a%}'
-	    ;;
-	screen)
-	    PR_TITLEBAR=$'%{\e_screen \005 (\005t) | %(!.-=[ROOT]=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\e\\%}'
-	    ;;
-	*)
-	    PR_TITLEBAR=''
-	    ;;
+        xterm*)
+            PR_TITLEBAR=$'%{\e]0;%(!.-=*[ROOT]*=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\a%}'
+            ;;
+        screen)
+            PR_TITLEBAR=$'%{\e_screen \005 (\005t) | %(!.-=[ROOT]=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\e\\%}'
+            ;;
+        *)
+            PR_TITLEBAR=''
+            ;;
     esac
-    
-    
+
+
     ###
     # Decide whether to set a screen title
     if [[ "$TERM" == "screen" ]]; then
-	PR_STITLE=$'%{\ekzsh\e\\%}'
+        PR_STITLE=$'%{\ekzsh\e\\%}'
     else
-	PR_STITLE=''
+        PR_STITLE=''
     fi
-    
-    
+
+
     ###
     # APM detection
-    
+
     if which ibam > /dev/null; then
-	PR_APM='$PR_WHITE${${PR_APM_RESULT[(f)1]}[(w)-2]}%%(${${PR_APM_RESULT[(f)3]}[(w)-1]})$PR_LIGHT_BLUE:'
+        PR_APM='$PR_WHITE${${PR_APM_RESULT[(f)1]}[(w)-2]}%%(${${PR_APM_RESULT[(f)3]}[(w)-1]})$PR_LIGHT_BLUE:'
     elif which apm > /dev/null; then
-	PR_APM='$PR_RED${PR_APM_RESULT[(w)5,(w)6]/\% /%%}$PR_LIGHT_BLUE:'
+        PR_APM='$PR_RED${PR_APM_RESULT[(w)5,(w)6]/\% /%%}$PR_LIGHT_BLUE:'
     else
-	PR_APM=''
+        PR_APM=''
     fi
-    
-    
+
+
     ###
     # Finally, the prompt.
 
@@ -158,9 +158,3 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 
 setprompt
-#function battery_charge {
-#  echo `~/misc/playground/batmeter/batmeter.py` 2>/dev/null
-#
-#}
-#
-#RPS1='$(battery_charge)'
