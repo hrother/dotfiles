@@ -43,6 +43,7 @@
      Bundle 'mbbill/undotree'
      Bundle 'Lokaltog/vim-distinguished'
      Bundle 'sjl/badwolf'
+     Bundle 'Keithbsmiley/tmux.vim'
      Bundle 'nelstrom/vim-qargs'
      Bundle 'nelstrom/vim-visual-star-search'
      Bundle 'kana/vim-textobj-user'
