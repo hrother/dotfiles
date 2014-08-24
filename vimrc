@@ -31,6 +31,7 @@
      Bundle 'tpope/vim-unimpaired.git'
      Bundle 'tpope/vim-abolish'
      Bundle 'msanders/snipmate.vim'
+     Bundle 'dhruvasagar/vim-table-mode'
      Bundle 'scrooloose/nerdcommenter'
      Bundle 'scrooloose/nerdtree'
      Bundle 'scrooloose/snipmate-snippets'
@@ -48,7 +49,6 @@
      Bundle 'nelstrom/vim-visual-star-search'
      Bundle 'kana/vim-textobj-user'
      Bundle 'kana/vim-textobj-lastpat'
-     Bundle 'reinh/vim-makegreen'
      Bundle 'christoomey/vim-tmux-navigator'
      Bundle 'airblade/vim-gitgutter'
      Bundle 'altercation/vim-colors-solarized'
@@ -57,9 +57,6 @@
      Bundle 'kien/ctrlp.vim'
      Bundle 'benmills/vimux'
      " python
-     Bundle 'julienr/vimux-pyutils'
-     Bundle 'pitluga/vimux-nose-test'
-     Bundle 'lambdalisue/nose.vim'
      Bundle 'vim-scripts/py-coverage'
      "Bundle 'klen/python-mode'
      Bundle 'klen/rope-vim'
@@ -67,7 +64,7 @@
      Bundle 'L9'
      Bundle 'wakatime/vim-wakatime'
      "" non github repos
-     Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+     Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
      "Bundle 'git://git.wincent.com/command-t.git'
 
      filetype plugin indent on     " required! 
@@ -146,7 +143,7 @@
 
 " GUI {{{
   " show selected text in grey if useing gvim
-  hi Visual guifg=#ff00ff
+    hi Visual guifg=#ff00ff
 
   " Bars and menues {{{
     set guioptions-=m "remove menue bar
@@ -242,12 +239,11 @@
 
     " Notes {{{
     map <leader>nc :e ~/Dropbox/notes/coding-notes.txt<cr>
-    map <leader>ncs :e ~/Dropbox/notes/sharpening-the-chainsaw.txt<cr>
-    map <leader>nsp :e ~/Dropbox/notes/slingshot/project-notes.txt<cr>
-    map <leader>nsc :e ~/Dropbox/notes/slingshot/coding-notes.txt<cr>
-    map <leader>nst :e ~/Dropbox/notes/slingshot/thesis-notes.txt<cr>
+    map <leader>ncs :e ~/Dropbox/otes/sharpening-the-chainsaw.txt<cr>
+    map <leader>nsp :e ~/Dropbox/notes/slingshot/project-notes.txt.gpg<cr>
+    map <leader>nsc :e ~/Dropbox/notes/slingshot/coding-notes.txt.gpg<cr>
+    map <leader>nst :e ~/Dropbox/notes/slingshot/timing-notes.txt.gpg<cr>
     map <leader>nm :e ~/Dropbox/notes/math-II.tex<cr>
-    map <leader>nmm :e ~/Dropbox/notes/math-III.tex<cr>
     " }}}
 
     " Command-t {{{
@@ -258,7 +254,7 @@
     " ctrlp {{{
       map <leader><space> :CtrlP<CR>
       map <leader>r :CtrlPClearCache<CR>
-      "map <leader>b :CtrlPBuffer<CR>
+      map <leader>b :CtrlPBuffer<CR>
     " }}}
 
     " NERDTree {{{
@@ -270,7 +266,7 @@
     " }}}
 
     " Tagbar {{{
-      map <leader>tb :TagbarToggle<CR>
+      "map <leader>tb :TagbarToggle<CR>
     " }}}
 
     " Undotree {{{
@@ -354,7 +350,6 @@
       autocmd BufNewFile,BufRead *.py set nocindent shiftwidth=4 tabstop=4 softtabstop=4 expandtab tw=79
       autocmd FileType python set omnifunc=pythoncomplete#Complete
       autocmd BufNewFile,BufRead *.py compiler nose
-      autocmd FileType python nnoremap <leader>T :MakeGreen .<CR>
     " }}}
 
     " dot {{{
@@ -372,10 +367,6 @@
   " }}}
 
   " Plugin config {{{
-
-  " MakeGreen {{{
-      let g:makegreen_stay_on_file=1
-  " }}}
 
     " Command-t {{{
       let g:CommandTMaxHeight=10
@@ -436,6 +427,26 @@
        set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
        " only powerline shows mode
        set noshowmode
+    "}}}
+
+    " Table-mode {{{
+      let g:table_mode_fillchar = '='
+      let g:table_mode_seperator = '#'
+    "}}}
+
+    " Vimux {{{
+     " Prompt for a command to run
+     map <Leader>vp :VimuxPromptCommand<CR>
+     " Run last command executed by VimuxRunCommand
+     map <Leader>vl :VimuxRunLastCommand<CR>
+     " Inspect runner pane
+     map <Leader>vr :VimuxInspectRunner<CR>
+     " Close vim tmux runner opened by VimuxRunCommand
+     map <Leader>vq :VimuxCloseRunner<CR>
+     " Interrupt any command running in the runner pane
+     map <Leader>vx :VimuxInterruptRunner<CR>
+     " Zoom the runner pane (use <bind-key> z to restore runner pane)
+     map <Leader>vz :call VimuxZoomRunner()<CR>
     "}}}
 
   " }}}
