@@ -65,7 +65,6 @@
      Bundle 'wakatime/vim-wakatime'
      "" non github repos
      Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-     "Bundle 'git://git.wincent.com/command-t.git'
 
      filetype plugin indent on     " required! 
      "
@@ -246,11 +245,6 @@
     map <leader>nm :e ~/Dropbox/notes/math-II.tex<cr>
     " }}}
 
-    " Command-t {{{
-      "map <leader><space> :CommandT<CR>
-      "map <leader>r :CommandTFlush<CR>
-    " }}}
-
     " ctrlp {{{
       map <leader><space> :CtrlP<CR>
       map <leader>r :CtrlPClearCache<CR>
@@ -367,12 +361,6 @@
 
   " Plugin config {{{
 
-    " Command-t {{{
-      let g:CommandTMaxHeight=10
-      let g:CommandTMinHeight=4
-      "set wildignore+=*.o,*.out,*.so,*.png,*.PNG,*.jpg,*.JPG,*.GIF,*.gif,tmp/**,
-
-    " }}}
 
     " latex-suite {{{
       set grepprg=grep\ -nH\ $*
