@@ -1,7 +1,7 @@
 " About {{{ :
   " vimrc of Holger Rother
   " with suggestions by Beate Franken and Sven Guckes.
-  " Bits and pices are pickt up from the so called internet ;)
+  " Bits and pieces are picked up from the so called Internet ;)
 " }}}
 
 " Setup {{{
@@ -56,9 +56,7 @@
      Bundle 'sk1418/Join'
      Bundle 'kien/ctrlp.vim'
      Bundle 'benmills/vimux'
-     " python
      Bundle 'vim-scripts/py-coverage'
-     "Bundle 'klen/python-mode'
      Bundle 'klen/rope-vim'
      "" vim-scripts repos
      Bundle 'L9'
@@ -141,12 +139,12 @@
 " }}}
 
 " GUI {{{
-  " show selected text in grey if useing gvim
+  " show selected text in gray if using gvim
     hi Visual guifg=#ff00ff
 
-  " Bars and menues {{{
-    set guioptions-=m "remove menue bar
-    set guioptions-=T "remove toolbar
+  " Bars and menus {{{
+    set guioptions-=m "remove menu bar
+    set guioptions-=T "remove tool bar
     set guioptions-=r "remove right scrollbar
   " }}}
 
@@ -176,7 +174,6 @@
 " }}}
 
 " Misc {{{
-  "set autochdir
   set hidden
   set autowrite
   set writebackup
@@ -284,7 +281,8 @@
   " }}}
 
   " Commands {{{
-  " Typofixing {{{
+
+  " Typo fixing {{{
   command! Q :q
   command! W :w
   " }}}
@@ -309,7 +307,7 @@
   " Functions {{{
   " }}}
 
-  " Autocommands {{{
+  " Auto commands {{{
 
     " All Files {{{
       autocmd BufNewFile,BufRead * set formatoptions=tcql nocindent comments&
@@ -371,7 +369,6 @@
     " }}}
 
     " Snipmate {{{
-      "let g:snippets_dir = '~/.vim/bundle/snipmate-snippets'
       let g:snips_author = 'Holger Rother'
     " }}}
 
@@ -389,18 +386,6 @@
       let g:syntastic_error_symbol='✗'
       let g:syntastic_warning_symbol='⚠'
       let g:syntastic_python_checkers=['pylint']
-    " }}}
-
-    " python-mode {{{
-      "let g:pymode_lint_todo_symbol = 'WW'
-      "let g:pymode_lint_comment_symbol = 'CC'
-      "let g:pymode_lint_visual_symbol = 'RR'
-      "let g:pymode_lint_error_symbol = '✗'
-      "let g:pymode_lint_info_symbol = 'II'
-      "let g:pymode_lint_pyflakes_symbol = 'FF'
-      "let g:pymode_folding=0
-      "let g:pymode_lint=1
-      "let g:pymode_lint_on_fly=1
     " }}}
 
     " Undotree {{{
