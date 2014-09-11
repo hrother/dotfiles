@@ -349,7 +349,6 @@
     " python {{{
       autocmd BufNewFile,BufRead *.py set nocindent shiftwidth=4 tabstop=4 softtabstop=4 expandtab tw=79
       autocmd FileType python set omnifunc=pythoncomplete#Complete
-      autocmd BufNewFile,BufRead *.py compiler nose
     " }}}
 
     " dot {{{
