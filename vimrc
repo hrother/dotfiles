@@ -130,8 +130,7 @@
   " }}}
 
   " Misc {{{
-    set number
-    "set relativenumber
+    set relativenumber
     set showmatch
     set history=500
   " }}}
@@ -181,7 +180,6 @@
   set directory=~/.tmp
   set notagrelative
   set tags=~/.tmp/tags;
-  set gdefault
   set nostartofline
   set backspace=2
   set ww=<,>,h,l
