@@ -59,6 +59,7 @@
      Bundle 'vim-scripts/py-coverage'
      Bundle 'klen/rope-vim'
      Bundle 'hrother/msmtp.vim'
+     Bundle 'hrother/offlineimaprc.vim'
      "" vim-scripts repos
      Bundle 'L9'
      Bundle 'wakatime/vim-wakatime'
