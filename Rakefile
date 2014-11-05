@@ -6,14 +6,7 @@ task :install do
   switch_to_zsh
   replace_all = false
 
-  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
-  files << "oh-my-zsh/custom/hrother.zsh-theme"
-  files << "oh-my-zsh/custom/plugins/com_abriv/com_abriv.plugin.zsh"
-  files << "oh-my-zsh/custom/plugins/dir_abriv/dir_abriv.plugin.zsh"
-  files << "oh-my-zsh/custom/plugins/functions/functions.plugin.zsh"
-  files << "oh-my-zsh/custom/plugins/env/env.plugin.zsh"
-  files << "oh-my-zsh/custom/plugins/virsh/virsh.plugin.zsh"
-  files << "oh-my-zsh/custom/plugins/virsh/_virsh"
+  files = Dir['**/*'].reject {|fn| File.directory?(fn)} - %w[Rakefile README.md LICENSE]
   files.each do |file|
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
