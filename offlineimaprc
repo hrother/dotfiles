@@ -1,0 +1,108 @@
+[general]
+maxsyncaccounts = 5
+accounts = gmail, jfranken, hrother, registration, rbg
+ui = TTY.TTYUI
+pythonfile = ~/bin/offlineimap-helpers.py
+fsync = false
+# Die after 120 seconds of nothing. Probably the connection died ...
+socktimeout = 120
+
+[Account gmail]
+status_backend = sqlite
+localrepository = gmail-local
+remoterepository = gmail-remote
+autorefresh = 2
+quick = 0
+maxconnections = 5
+
+[Account jfranken]
+status_backend = sqlite
+localrepository = jfranken-local
+remoterepository = jfranken-remote
+autorefresh = 4
+quick=2
+maxconnections = 3
+
+[Account hrother]
+status_backend = sqlite
+localrepository = hrother-local
+remoterepository = hrother-remote
+maxconnections = 3
+
+[Account registration]
+status_backend = sqlite
+localrepository = registration-local
+remoterepository = registration-remote
+maxconnections = 2
+
+[Account rbg]
+status_backend = sqlite
+localrepository = rbg-local
+remoterepository = rbg-remote
+maxconnections = 2
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/Mail/gmail
+
+[Repository jfranken-local]
+type = Maildir
+localfolders = ~/Mail/jfranken
+
+[Repository hrother-local]
+type = Maildir
+localfolders = ~/Mail/hrother
+
+[Repository registration-local]
+type = Maildir
+localfolders = ~/Mail/registration
+
+[Repository rbg-local]
+type = Maildir
+localfolders = ~/Mail/rbg
+
+[Repository gmail-remote]
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = Gmail
+remoteusereval = get_username("imap.gmail.com")
+remotepasseval = get_password("imap.gmail.com")
+realdelete = no
+
+[Repository jfranken-remote]
+sslcacertfile = /etc/ssl/certs/jfranken.crt
+type = IMAP
+remotehost = mail.jfranken.de
+remoteport = 993
+remoteusereval = get_username("jfranken-mail.jfranken.de")
+remotepasseval = get_password("jfranken-mail.jfranken.de")
+ssl = yes
+folderfilter = lambda folder: folder.startswith('INBOX') and folder not in ['INBOX/spam']
+
+[Repository hrother-remote]
+sslcacertfile = /etc/ssl/certs/jfranken.crt
+type = IMAP
+remotehost = mail.jfranken.de
+remoteport = 993
+remoteusereval = get_username("hrother-mail.jfranken.de")
+remotepasseval = get_password("hrother-mail.jfranken.de")
+ssl = yes
+folderfilter = lambda folder: folder.startswith('INBOX')
+
+[Repository registration-remote]
+sslcacertfile = /etc/ssl/certs/jfranken.crt
+type = IMAP
+remotehost = mail.jfranken.de
+remoteport = 993
+remoteusereval = get_username("registration-mail.jfranken.de")
+remotepasseval = get_password("registration-mail.jfranken.de")
+ssl = yes
+folderfilter = lambda folder: folder.startswith('INBOX')
+
+[Repository rbg-remote]
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = IMAP
+remotehost = imap.rbg.informatik.tu-darmstadt.de
+remoteport = 993
+remoteusereval = get_username("imap.rbg.informatik.tu-darmstadt.de")
+remotepasseval = get_password("imap.rbg.informatik.tu-darmstadt.de")
+ssl = yes
