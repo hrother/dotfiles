@@ -1,0 +1,14 @@
+###
+# registration specific options
+###
+color status red default
+
+set from      = "registration@hrother.org"
+set sendmail  = "/usr/local/bin/msmtp -a registration_hrother"
+set mbox      = "+registration/INBOX"
+set record    = "+registration/INBOX.SentMail"
+set postponed = "+registration/INBOX.Drafts"
+
+# sidebar mailboxes
+unmailboxes *
+mailboxes +registration/INBOX +registration/INBOX.SentMail +registration/INBOX.Drafts

@@ -1,0 +1,7 @@
+set sidebar_delim = '  │'
+set sidebar_visible = yes
+set sidebar_width = 32
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+color sidebar_new yellow default

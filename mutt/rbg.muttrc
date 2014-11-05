@@ -1,0 +1,14 @@
+###
+# rbg specific options
+###
+color status blue default
+
+set from      = "h_rother@rbg.informatik.tu-darmstadt.de"
+set sendmail  = "/usr/local/bin/msmtp -a rbg"
+set mbox      = "+rbg/INBOX"
+set record    = "+rbg/Sent"
+set postponed = "+rbg/Drafts"
+
+# sidebar mailboxes
+unmailboxes *
+mailboxes +rbg/INBOX +rbg/Sent +rbg/BSC-Thesis +rbg/Drafts

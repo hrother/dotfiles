@@ -1,0 +1,14 @@
+###
+# jfranken specific options
+###
+color status cyan default
+
+set from      = "holger@jfranken.de"
+set sendmail  = "/usr/local/bin/msmtp -a holger_jfranken"
+set mbox      = "+jfranken/INBOX"
+set record    = "+jfranken/INBOX.Sent"
+set postponed = "+jfranken/INBOX.postponed"
+
+# sidebar mailboxes
+unmailboxes *
+mailboxes +jfranken/INBOX +jfranken/INBOX.Sent +jfranken/INBOX.postponed +jfranken/INBOX.hthc_herren +jfranken/INBOX.tec

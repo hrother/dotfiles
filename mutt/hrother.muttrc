@@ -1,0 +1,14 @@
+###
+# hrother specific options
+###
+color status brightblack default
+
+set from      = "hrother@hrother.org"
+set sendmail  = "/usr/local/bin/msmtp -a hrother_hrother"
+set mbox      = "+hrother/INBOX"
+set record    = "+hrother/INBOX.SentMail"
+set postponed = "+hrother/INBOX.Drafts"
+
+# sidebar mailboxes
+unmailboxes *
+mailboxes +hrother/INBOX +hrother/INBOX.SentMail +hrother/INBOX.Drafts

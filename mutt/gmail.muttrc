@@ -1,0 +1,14 @@
+###
+# gmail specific options
+###
+color status green default
+
+set from      = "hrother.public@gmail.com"
+set sendmail  = "/usr/local/bin/msmtp -a gmail"
+set mbox      = "+gmail/INBOX"
+set record    = "+gmail/gesendet"
+set postponed = "+gmail/entw&apw-rfe"
+
+# sidebar mailboxes
+unmailboxes *
+mailboxes +gmail/INBOX +gmail/entw&apw-rfe +gmail/gesendet
