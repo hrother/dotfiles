@@ -26,5 +26,4 @@ stty -ixon
 #fi
 
 export SHELL="/usr/bin/zsh"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM functio
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && . "$HOME/.pythonbrew/etc/bashrc" # load pythonbrew
