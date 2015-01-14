@@ -64,7 +64,7 @@
      Bundle 'L9'
      Bundle 'wakatime/vim-wakatime'
      "" non github repos
-     Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+     "Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
      filetype plugin indent on     " required! 
      "
@@ -132,6 +132,9 @@
   " }}}
 
   " Misc {{{
+    " set number and relativenumber enables relativenumbers for all lines except
+    " the cursor line. The cursor line shows the absolute line number.
+    set number
     set relativenumber
     set showmatch
     set history=500
