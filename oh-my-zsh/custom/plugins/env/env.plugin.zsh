@@ -24,6 +24,8 @@ stty -ixon
   #export PIP_VIRTUALENV_BASE=$WORKON_HOME
   #export PIP_RESPECT_VIRTUALENV=true
 #fi
-
+export TERM=screen-256color
 export SHELL="/usr/bin/zsh"
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && . "$HOME/.pythonbrew/etc/bashrc" # load pythonbrew
+export GRADLE_HOME=/usr/local/gradle-2.2.1
+export PATH=$PATH:$GRADLE_HOME/bin
