@@ -58,6 +58,7 @@
      Plugin 'benmills/vimux'
      Plugin 'vim-scripts/py-coverage'
      Plugin 'klen/rope-vim'
+     Plugin 'davidhalter/jedi-vim'
      Plugin 'hrother/msmtp.vim'
      Plugin 'hrother/offlineimaprc.vim'
      "" vim-scripts repos
