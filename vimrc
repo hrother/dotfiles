@@ -63,7 +63,6 @@
      Plugin 'hrother/offlineimaprc.vim'
      "" vim-scripts repos
      Plugin 'L9'
-     Plugin 'wakatime/vim-wakatime'
      "" non github repos
      "Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
      filetype plugin indent on     " required! 
