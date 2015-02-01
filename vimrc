@@ -19,64 +19,53 @@
 
      " let Vundle manage Vundle
      " required! 
-     Bundle 'gmarik/vundle'
+     Plugin 'gmarik/vundle'
 
-     " My Bundles here:
+     " My Plugins here:
      "
      " original repos on github
-     Bundle 'tpope/vim-fugitive'
-     Bundle 'tpope/vim-surround'
-     Bundle 'tpope/vim-repeat'
-     Bundle 'tpope/vim-rails.git'
-     Bundle 'tpope/vim-unimpaired.git'
-     Bundle 'tpope/vim-abolish'
-     Bundle 'msanders/snipmate.vim'
-     Bundle 'dhruvasagar/vim-table-mode'
-     Bundle 'scrooloose/nerdcommenter'
-     Bundle 'scrooloose/nerdtree'
-     Bundle 'scrooloose/snipmate-snippets'
-     Bundle 'scrooloose/syntastic'
-     Bundle 'majutsushi/tagbar'
-     Bundle 'nathanaelkane/vim-indent-guides'
-     Bundle 'vim-scripts/TaskList.vim'
-     Bundle 'Lokaltog/powerline'
-     Bundle 'jamessan/vim-gnupg'
-     Bundle 'mbbill/undotree'
-     Bundle 'Lokaltog/vim-distinguished'
-     Bundle 'sjl/badwolf'
-     Bundle 'Keithbsmiley/tmux.vim'
-     Bundle 'nelstrom/vim-qargs'
-     Bundle 'nelstrom/vim-visual-star-search'
-     Bundle 'kana/vim-textobj-user'
-     Bundle 'kana/vim-textobj-lastpat'
-     Bundle 'christoomey/vim-tmux-navigator'
-     Bundle 'airblade/vim-gitgutter'
-     Bundle 'altercation/vim-colors-solarized'
-     Bundle 'sk1418/HowMuch'
-     Bundle 'sk1418/Join'
-     Bundle 'kien/ctrlp.vim'
-     Bundle 'benmills/vimux'
-     Bundle 'vim-scripts/py-coverage'
-     Bundle 'klen/rope-vim'
-     Bundle 'hrother/msmtp.vim'
-     Bundle 'hrother/offlineimaprc.vim'
+     Plugin 'tpope/vim-fugitive'
+     Plugin 'tpope/vim-surround'
+     Plugin 'tpope/vim-repeat'
+     Plugin 'tpope/vim-rails.git'
+     Plugin 'tpope/vim-unimpaired.git'
+     Plugin 'tpope/vim-abolish'
+     Plugin 'msanders/snipmate.vim'
+     Plugin 'dhruvasagar/vim-table-mode'
+     Plugin 'scrooloose/nerdcommenter'
+     Plugin 'scrooloose/nerdtree'
+     Plugin 'scrooloose/snipmate-snippets'
+     Plugin 'scrooloose/syntastic'
+     Plugin 'majutsushi/tagbar'
+     Plugin 'nathanaelkane/vim-indent-guides'
+     Plugin 'vim-scripts/TaskList.vim'
+     Plugin 'Lokaltog/powerline'
+     Plugin 'jamessan/vim-gnupg'
+     Plugin 'mbbill/undotree'
+     Plugin 'Lokaltog/vim-distinguished'
+     Plugin 'sjl/badwolf'
+     Plugin 'Keithbsmiley/tmux.vim'
+     Plugin 'nelstrom/vim-qargs'
+     Plugin 'nelstrom/vim-visual-star-search'
+     Plugin 'kana/vim-textobj-user'
+     Plugin 'kana/vim-textobj-lastpat'
+     Plugin 'christoomey/vim-tmux-navigator'
+     Plugin 'airblade/vim-gitgutter'
+     Plugin 'altercation/vim-colors-solarized'
+     Plugin 'sk1418/HowMuch'
+     Plugin 'sk1418/Join'
+     Plugin 'kien/ctrlp.vim'
+     Plugin 'benmills/vimux'
+     Plugin 'vim-scripts/py-coverage'
+     Plugin 'klen/rope-vim'
+     Plugin 'hrother/msmtp.vim'
+     Plugin 'hrother/offlineimaprc.vim'
      "" vim-scripts repos
-     Bundle 'L9'
-     Bundle 'wakatime/vim-wakatime'
+     Plugin 'L9'
+     Plugin 'wakatime/vim-wakatime'
      "" non github repos
-     "Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-
+     "Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
      filetype plugin indent on     " required! 
-     "
-     " Brief help
-     " :BundleList          - list configured bundles
-     " :BundleInstall(!)    - install(update) bundles
-     " :BundleSearch(!) foo - search(or refresh cache first) for foo
-     " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-     "
-     " see :h vundle for more details or wiki for FAQ
-     " NOTE: comments after Bundle command are not allowed..
-
   "}}}
 "}}}
 
