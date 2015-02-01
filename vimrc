@@ -380,6 +380,13 @@
       let g:syntastic_python_checkers=['pylint']
     " }}}
 
+    " jedi-vim {{{
+      " No auto suggestions on dot
+      let g:jedi#popup_on_dot=0
+      " Use default completion key binding
+      let g:jedi#completions_command="<C-N>"
+    "}}}
+
     " Undotree {{{
       if has("persistent_undo")
           set undodir='/home/holger/.vimundo/'
