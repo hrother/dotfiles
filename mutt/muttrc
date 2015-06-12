@@ -20,7 +20,7 @@ set editor           = "/usr/bin/vim +/^$"   # use vim and skip to first blank l
 # main options
 set mbox_type       = Maildir         # mailbox type
 set folder          = ~/Mail          # mailbox location
-set spoolfile       = "+rbg/INBOX"    # University is default inbox
+set spoolfile       = "+hrother/INBOX"    # hrother is default inbox
 set timeout         = 3               # idle time before scanning
 set mail_check      = 0               # minimum time between scans
 set sort_alias      = alias           # sort alias file by alias
@@ -85,14 +85,13 @@ ignore *                                 # ignore all headers
 unignore from: to: cc: date: subject:    # show only these
 hdr_order from: to: cc: date: subject:   # and in this order
 
-mailboxes +rbg/INBOX +rbg/Sent +rbg/Drafts
-
+mailboxes +hrother/INBOX +hrother/Sent +hrother/Drafts
 
 # always sourced
 source $alias_file             # required for functionality
 source ~/.mutt/colors.muttrc   # source colors file
 source ~/.mutt/sidebar.muttrc  # any muttng options are here
-source ~/.mutt/rbg.muttrc    # source rbg as default
+#source ~/.mutt/rbg.muttrc    # source rbg as default
 
 # account specific sources
 folder-hook gmail/* source ~/.mutt/gmail.muttrc
