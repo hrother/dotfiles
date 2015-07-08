@@ -1,6 +1,6 @@
 [general]
 maxsyncaccounts = 5
-accounts = gmail, jfranken, hrother, registration, rbg
+accounts = gmail, jfranken, hrother, registration
 ui = TTY.TTYUI
 pythonfile = ~/bin/offlineimap-helpers.py
 fsync = false
@@ -33,12 +33,6 @@ maxconnections = 3
 status_backend = sqlite
 localrepository = registration-local
 remoterepository = registration-remote
-maxconnections = 2
-
-[Account rbg]
-status_backend = sqlite
-localrepository = rbg-local
-remoterepository = rbg-remote
 maxconnections = 2
 
 [Repository gmail-local]
@@ -97,12 +91,3 @@ remoteusereval = get_username("registration-mail.jfranken.de")
 remotepasseval = get_password("registration-mail.jfranken.de")
 ssl = yes
 folderfilter = lambda folder: folder.startswith('INBOX')
-
-[Repository rbg-remote]
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-type = IMAP
-remotehost = imap.rbg.informatik.tu-darmstadt.de
-remoteport = 993
-remoteusereval = get_username("imap.rbg.informatik.tu-darmstadt.de")
-remotepasseval = get_password("imap.rbg.informatik.tu-darmstadt.de")
-ssl = yes
