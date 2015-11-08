@@ -17,4 +17,5 @@ stty -ixon
 
 export TERM=screen-256color
 export SHELL="/usr/bin/zsh"
-export PATH="/home/holger/.miniconda3/bin:$PATH"
+export PATH="~/.miniconda3/bin:$PATH"
+export PATH="~/bin:$PATH"
