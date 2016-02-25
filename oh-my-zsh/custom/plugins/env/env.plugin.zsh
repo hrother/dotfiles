@@ -16,6 +16,7 @@ fi
 stty -ixon
 
 export TERM=screen-256color
+export EDITOR='vim'
 export SHELL="/usr/bin/zsh"
-export PATH="~/.miniconda3/bin:$PATH"
-export PATH="~/bin:$PATH"
+export PATH="$HOME/.miniconda3/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
