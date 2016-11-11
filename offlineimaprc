@@ -63,7 +63,7 @@ remotepasseval = get_password("imap.gmail.com")
 realdelete = no
 
 [Repository jfranken-remote]
-sslcacertfile = /etc/ssl/certs/jfranken.crt
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 type = IMAP
 remotehost = mail.jfranken.de
 remoteport = 993
@@ -73,7 +73,7 @@ ssl = yes
 folderfilter = lambda folder: folder.startswith('INBOX') and folder not in ['INBOX/spam']
 
 [Repository hrother-remote]
-sslcacertfile = /etc/ssl/certs/jfranken.crt
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 type = IMAP
 remotehost = mail.jfranken.de
 remoteport = 993
@@ -83,7 +83,7 @@ ssl = yes
 folderfilter = lambda folder: folder.startswith('INBOX')
 
 [Repository registration-remote]
-sslcacertfile = /etc/ssl/certs/jfranken.crt
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 type = IMAP
 remotehost = mail.jfranken.de
 remoteport = 993
