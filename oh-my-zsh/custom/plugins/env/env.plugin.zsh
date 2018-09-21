@@ -29,4 +29,4 @@ export SHELL="/usr/bin/zsh"
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && . "$HOME/.pythonbrew/etc/bashrc" # load pythonbrew
 export GRADLE_HOME=/usr/local/gradle-2.2.1
 export PATH=$PATH:$GRADLE_HOME/bin
-export PATH="/home/holger/miniconda3/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
